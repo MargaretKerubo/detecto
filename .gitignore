@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+venv/
+.venv/
+env/
+.env
+
+# YOLOv8 model weights
+*.pt
+*.onnx
+*.engine
+runs/
+
+# Node / Frontend
+node_modules/
+frontend/dist/
+frontend/.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Agent config (local-only)
+.agents/
+
+# Logs
+*.log
