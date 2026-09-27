@@ -93,6 +93,42 @@ export default function HistoryView() {
           </ResponsiveContainer>
         </div>
       )}
+
+      {/* History table */}
+      {isLoading ? (
+        <p className="text-sm text-slate-500">Loading…</p>
+      ) : records.length === 0 ? (
+        <p className="text-sm text-slate-500">No detection history yet.</p>
+      ) : (
+        <div className="overflow-x-auto rounded-xl border border-slate-700">
+          <table className="w-full text-sm">
+            <thead className="bg-slate-800 text-left text-xs text-slate-400">
+              <tr>
+                <th className="px-4 py-3">Timestamp</th>
+                <th className="px-4 py-3">People</th>
+                <th className="px-4 py-3">Avg. Conf.</th>
+                <th className="px-4 py-3">Inference (ms)</th>
+                <th className="px-4 py-3">File</th>
+              </tr>
+            </thead>
+            <tbody>
+              {records.map((r, i) => (
+                <tr key={r.id}
+                  className={i % 2 === 0 ? 'bg-slate-900' : 'bg-slate-800/50'}>
+                  <td className="px-4 py-3 text-slate-400">{formatTs(r.timestamp)}</td>
+                  <td className="px-4 py-3 font-bold text-emerald-400">{r.person_count}</td>
+                  <td className="px-4 py-3">{(r.average_confidence * 100).toFixed(1)}%</td>
+                  <td className="px-4 py-3">{r.inference_time_ms.toFixed(0)}</td>
+                  <td className="px-4 py-3 truncate max-w-[140px] text-slate-500">
+                    {r.image_filename ?? '—'}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   )
 }
+
