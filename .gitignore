@@ -37,3 +37,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+backend/samples/
+backend/eval_script.py
