@@ -35,8 +35,8 @@ cd backend
 python -m venv .venv
 # Windows:
 .venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn main:app --reload --port 8000
+pip install fastapi "uvicorn[standard]" ultralytics opencv-python-headless python-multipart sqlalchemy python-dotenv
+python -m uvicorn main:app --reload --port 8000
 ```
 
 > The YOLOv8 nano weights (`yolov8n.pt`) are downloaded automatically on first run.
@@ -68,7 +68,7 @@ DATABASE_URL=sqlite:///./detecto.db
 
 ## Testing & Validation
 
-The model was evaluated on 10 sample images in `frontend/public/samples/`. Ground-truth person counts were manually recorded for accuracy calculation.
+The model was evaluated on 10 sample images in `backend/samples/`. Ground-truth person counts were manually recorded for accuracy calculation.
 
 ### Results Table
 
