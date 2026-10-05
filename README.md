@@ -74,13 +74,13 @@ The model was evaluated on 10 sample images in `frontend/public/samples/`. Groun
 
 | Metric | Description | Target | Result |
 |--------|-------------|--------|--------|
-| Detection Accuracy | Correct detections ÷ total visible persons | ≥ 85 % | _Run eval-model skill_ |
-| False Positives | Non-person bounding boxes | ≤ 10 % | _Run eval-model skill_ |
-| Average Inference Time | Wall-clock time per image | ≤ 1.5 s | _Run eval-model skill_ |
-| Average Confidence | Mean confidence of valid detections | ≥ 0.7 | _Run eval-model skill_ |
-| System Reliability | Processes all images without crashes | 100 % | _Run eval-model skill_ |
+| Detection Accuracy | Correct detections ÷ total visible persons | ≥ 85 % | **30.11%** |
+| False Positives | Non-person detections | ≤ 10 % | **22.22%** |
+| Average Inference Time | Time per image (local GPU/CPU) | ≤ 1.5 s | **1.63s** |
+| Average Confidence | Mean confidence of valid detections | ≥ 0.7 | **0.63** |
+| System Reliability | Handles all test images without crashing | 100 % | **100%** |
 
-> Run the `eval-model` agent skill to automatically populate this table with real numbers.
+> The `eval-model` agent skill was run to automatically populate this table with real numbers.
 
 ---
 
